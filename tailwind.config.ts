@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,30 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				softchat: {
+					50: '#f3f1ff',
+					100: '#ebe5ff',
+					200: '#d9cfff',
+					300: '#bfacff',
+					400: '#a382ff',
+					500: '#8a59ff',
+					600: '#7953f5', // Primary brand color
+					700: '#6a36d9',
+					800: '#5c2fb1',
+					900: '#4c2890',
+				},
+				teal: {
+					50: '#f0fdfa',
+					100: '#ccfbf1',
+					200: '#99f6e4',
+					300: '#5eead4',
+					400: '#2dd4bf', // Secondary brand color
+					500: '#14b8a6',
+					600: '#0d9488',
+					700: '#0f766e',
+					800: '#115e59',
+					900: '#134e4a',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -70,26 +95,36 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-out': {
+					'0%': { opacity: '1', transform: 'translateY(0)' },
+					'100%': { opacity: '0', transform: 'translateY(10px)' }
+				},
+				'slide-in': {
+					'0%': { opacity: '0', transform: 'translateX(-10px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-out': 'fade-out 0.5s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out',
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
