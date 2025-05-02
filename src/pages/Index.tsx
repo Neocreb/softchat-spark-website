@@ -1,17 +1,18 @@
 
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Home from './Home';
 
 const Index = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     // If we're on the exact /index route, redirect to home
-    if (window.location.pathname.toLowerCase() === '/index') {
+    if (location.pathname.toLowerCase() === '/index') {
       navigate('/', { replace: true });
     }
-  }, [navigate]);
+  }, [navigate, location.pathname]);
 
   // Return the Home component directly
   return <Home />;
